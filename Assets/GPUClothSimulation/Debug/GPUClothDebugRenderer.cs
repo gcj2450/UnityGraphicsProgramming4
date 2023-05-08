@@ -122,7 +122,7 @@ namespace GPUClothSimulation
                 _renderMat.SetTexture("_PositionTex", _clothSim.GetPositionBuffer());
                 _renderMat.SetPass(0);
 
-                Graphics.DrawProcedural(MeshTopology.Points, _clothSim.GetClothResolution().x * _clothSim.GetClothResolution().y);
+                Graphics.DrawProceduralNow(MeshTopology.Points, _clothSim.GetClothResolution().x * _clothSim.GetClothResolution().y);
             }
 
             if (_drawGrid)
@@ -132,7 +132,7 @@ namespace GPUClothSimulation
                 _renderMat.SetBuffer("_SpringIdsBuffer", _gridBuffer);
                 _renderMat.SetPass(1);
 
-                Graphics.DrawProcedural(MeshTopology.Points, _gridBuffer.count);
+                Graphics.DrawProceduralNow(MeshTopology.Points, _gridBuffer.count);
             }
 
             if (_drawGridDiagonal)
@@ -142,7 +142,7 @@ namespace GPUClothSimulation
                 _renderMat.SetBuffer("_SpringIdsBuffer", _gridDiagonalBuffer);
                 _renderMat.SetPass(1);
 
-                Graphics.DrawProcedural(MeshTopology.Points, _gridDiagonalBuffer.count);
+                Graphics.DrawProceduralNow(MeshTopology.Points, _gridDiagonalBuffer.count);
             }
 
             if (_drawGridDiagonalAlternate)
@@ -152,7 +152,7 @@ namespace GPUClothSimulation
                 _renderMat.SetBuffer("_SpringIdsBuffer", _gridDiagonalAlternateBuffer);
                 _renderMat.SetPass(1);
 
-                Graphics.DrawProcedural(MeshTopology.Points, _gridDiagonalAlternateBuffer.count);
+                Graphics.DrawProceduralNow(MeshTopology.Points, _gridDiagonalAlternateBuffer.count);
             }
         }
 

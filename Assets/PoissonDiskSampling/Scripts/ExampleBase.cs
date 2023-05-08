@@ -65,7 +65,7 @@ namespace PoissonDiskSampling
             this.geometryMaterial.SetFloat("_Radius", this.minimumDistance * this.radiusRate * 0.5f);
 
             this.geometryMaterial.SetPass(0);
-            Graphics.DrawProcedural(MeshTopology.Points, this.points.Count, 1);
+            Graphics.DrawProceduralNow(MeshTopology.Points, this.points.Count, 1);
         }
     }
 }
